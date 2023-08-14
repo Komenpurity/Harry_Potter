@@ -13,9 +13,10 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-12 ">
      
      <h1 className='text-3xl font-extrabold'>Harry Potter Characters</h1>
-     
+     <SearchBar />
+
       {!isDataEmpty ? (
-        <div className='grid grid-cols-5'> 
+        <div className='grid grid-cols-5 m-2'> 
           
           {allCharacters?.map((char) => {
             //assigning the data to the char 
