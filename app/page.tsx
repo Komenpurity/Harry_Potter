@@ -10,17 +10,23 @@ export default async function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-12 ">
+     
+     <h1 className='text-3xl font-extrabold'>Harry Potter Characters</h1>
+     
       {!isDataEmpty ? (
         <div className='grid grid-cols-5'> 
+          
           {allCharacters?.map((char) => {
+            //assigning the data to the char 
             return <CharacterCard char={char}/>  
           })}
         </div>
       ) : (
-        <div>
+        //when there is an error display this
+        <div className='mt-16 flex justify-center items-center flex-col gap-2'> 
           <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
-            <p>{allCharacters?.message}</p> 
+          <p>{allCharacters?.message}</p> 
         </div>
       )}
     </main>
