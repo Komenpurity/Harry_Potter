@@ -11,7 +11,18 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
+      {!isDataEmpty ? (
+        <div>
+          {allCharacters?.map((char) => {
+            return <CharacterCard char={char}/>  
+          })}
+        </div>
+      ) : (
+        <div>
+          <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
+            <p>{allCharacters?.message}</p> 
+        </div>
+      )}
     </main>
   )
 }

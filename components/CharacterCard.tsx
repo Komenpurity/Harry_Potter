@@ -1,8 +1,20 @@
+"use client"
+
+import { CharacterProps } from "@/types";
+import { useState } from "react"
+
+interface CharacterCardProps {
+  char: CharacterProps; 
+}
+
+const CharacterCard = ({char}: CharacterCardProps) => {  
+  const {name,dateOfBirth,id} = char;
 
 
-const CharacterCard = () => {
   return (
-    <div>CharacterCard</div>
+    <div key={id}> 
+      <p>{name}  {dateOfBirth}</p> 
+    </div>
   )
 }
 
