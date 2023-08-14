@@ -12,9 +12,12 @@ const CharacterCard = ({char}: CharacterCardProps) => {
 
 
   return (
-    <div key={id}> 
-      <p>{name}  {dateOfBirth}</p> 
-    </div>
+    <div className="max-w-sm m-3 rounded overflow-hidden shadow-lg">
+      <div className="px-6 py-4">
+        <div className="font-bold text-xl mb-2">{name}</div>
+        <p className="text-gray-700 text-base">{dateOfBirth}</p>
+      </div>
+  </div>
   )
 }
 

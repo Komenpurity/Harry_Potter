@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {!isDataEmpty ? (
-        <div>
+        <div className='grid grid-cols-5'> 
           {allCharacters?.map((char) => {
             return <CharacterCard char={char}/>  
           })}
