@@ -3,3 +3,4 @@ export interface CharacterProps {
     name:string;
     dateOfBirth: number; 
 }
+
