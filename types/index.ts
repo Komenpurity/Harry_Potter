@@ -9,4 +9,5 @@ export interface detailsProps{
     role: string;
     house: string;
     wand: string;
+    id: any
 }

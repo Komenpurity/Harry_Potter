@@ -3,7 +3,6 @@
 import { CharacterProps } from "@/types";
 import { useState } from "react";
 import Detail from "./Detail";
-import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 interface CharacterCardProps {
@@ -22,10 +21,8 @@ const CharacterCard = ({char}: CharacterCardProps) => {
 
       const result = await response.json()  
       setData(result)
-       
-      /* useEffect(() => {
-        push('/hello-nextjs');
-     }, []); */
+
+       // push('/details'); 
   }
 
   {data?.map((element) => {
@@ -33,8 +30,8 @@ const CharacterCard = ({char}: CharacterCardProps) => {
   })}
 
   return (
-    <div className="max-w-sm m-3 rounded overflow-hidden shadow-lg" onClick={() => {handleClick(id)}}> 
-      <div className="px-6 py-4">
+    <div key={id} className="max-w-sm m-3 rounded overflow-hidden shadow-lg" onClick={() => {handleClick(id)}}> 
+      <div  className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{name}</div>
         <p className="text-gray-700 text-base">{dateOfBirth}</p>
       </div>
