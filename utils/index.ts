@@ -1,5 +1,4 @@
 
-
 export async function fetchCharacters() {
     //fetch the data from the api
     const response = await fetch(`https://hp-api.onrender.com/api/characters`)

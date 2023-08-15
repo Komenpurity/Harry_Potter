@@ -1,8 +1,16 @@
+import { detailsProps } from "@/types"
 
+interface detailsCardProps{
+  element: detailsProps
+}
 
-const Detail = () => {
+const Detail = ({element}: detailsCardProps) => {
+  const {name,role,house,wand} = element 
+
   return (
-    <div>Detail</div>
+    <div>
+      <p>{name} {role} {house} {wand}</p>
+    </div>
   )
 }
 

@@ -2,7 +2,6 @@
 
 import { CharacterCard, SearchBar } from '@/components'
 import { fetchCharacters } from '@/utils'
-import { useEffect, useState } from 'react';
 
 export default async function Home() {  
       const allCharacters = await fetchCharacters() 
