@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
 import { CharacterProps } from "@/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Detail from "./Detail";
 import { useRouter } from 'next/navigation';
 
@@ -15,19 +15,22 @@ const CharacterCard = ({char}: CharacterCardProps) => {
 
   const { push } = useRouter();
 
-  async function handleClick(newItem: any){ 
+    async function handleClick(newItem: any){ 
 
-    const response = await fetch(`https://hp-api.onrender.com/api/character/${newItem}`)
+      const response = await fetch(`https://hp-api.onrender.com/api/character/${newItem}`)
 
-      const result = await response.json()  
-      setData(result)
+        const result = await response.json()  
+        setData(result)
 
-       // push('/details'); 
-  }
+        
+        // push('/details'); 
+    }
 
   {data?.map((element) => {
-      return <Detail element={element} />    
+      return <Detail element={element} />     
   })}
+
+  
 
   return (
     <div key={id} className="max-w-sm m-3 rounded overflow-hidden shadow-lg" onClick={() => {handleClick(id)}}> 

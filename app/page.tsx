@@ -1,12 +1,15 @@
-"use client" 
 
 import { CharacterCard, SearchBar } from '@/components'
-import { fetchCharacters } from '@/utils'
+import { HomeProps } from '@/types';
+import { fetchCharacters, fetchHouses } from '@/utils'
 
-export default async function Home() {  
+export default async function Home({searchParams}: HomeProps) {  
       const allCharacters = await fetchCharacters() 
   
-  //console.log(allCharacters) 
+      const searchHouses = await fetchHouses({
+        house: searchParams.house || "gryffindor",
+      })
+ // console.log(searchHouses)  
 
   //check if data is empty,length less than 1,or not an array
   const isDataEmpty = !Array.isArray(allCharacters) || allCharacters.length < 1 || !allCharacters;
@@ -18,6 +21,7 @@ export default async function Home() {
      <h1 className='text-3xl font-extrabold'>Harry Potter Characters</h1>
      <SearchBar />
 
+     
       {!isDataEmpty ? (
         <div className='grid grid-cols-5 m-2'> 
           

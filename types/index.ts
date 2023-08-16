@@ -11,3 +11,11 @@ export interface detailsProps{
     wand: string;
     id: any
 }
+
+export interface HomeProps {
+    searchParams: FilterProps;
+  }
+
+export interface FilterProps {
+    house:string; 
+}
