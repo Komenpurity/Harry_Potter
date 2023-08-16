@@ -17,6 +17,7 @@ const CharacterCard = ({char}: CharacterCardProps) => {
 
     async function handleClick(newItem: any){ 
 
+      //calling the url with the id info 
       const response = await fetch(`https://hp-api.onrender.com/api/character/${newItem}`)
 
         const result = await response.json()  
@@ -26,9 +27,10 @@ const CharacterCard = ({char}: CharacterCardProps) => {
         // push('/details'); 
     }
 
-  {data?.map((element) => {
-      return <Detail element={element} />     
-  })}
+    //iterating over the data details from the API when clicked
+    {data?.map((element) => {
+        return <Detail element={element} />     
+    })}
 
   
 
