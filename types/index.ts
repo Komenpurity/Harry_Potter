@@ -14,7 +14,7 @@ export interface detailsProps{
 
 export interface HomeProps {
     searchParams: FilterProps;
-  }
+}
 
 export interface FilterProps {
     house:string; 

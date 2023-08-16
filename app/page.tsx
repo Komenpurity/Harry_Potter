@@ -1,13 +1,13 @@
 
-import { CharacterCard, SearchBar } from '@/components'
-import { HomeProps } from '@/types';
+import { CharacterCard, SearchBar, SearchDisplay } from '@/components'
+import { CharacterProps, HomeProps } from '@/types';
 import { fetchCharacters, fetchHouses } from '@/utils'
 
 export default async function Home({searchParams}: HomeProps) {  
       const allCharacters = await fetchCharacters() 
   
       const searchHouses = await fetchHouses({
-        house: searchParams.house || "gryffindor",
+        house: searchParams.house
       })
  // console.log(searchHouses)  
 
@@ -21,7 +21,12 @@ export default async function Home({searchParams}: HomeProps) {
      <h1 className='text-3xl font-extrabold'>Harry Potter Characters</h1>
      <SearchBar />
 
-     
+      <div className='grid grid-cols-5 m-2'> 
+        {searchHouses?.map((element: CharacterProps) => {
+          return <SearchDisplay element={element} />
+        })}
+      </div>
+
       {!isDataEmpty ? (
         <div className='grid grid-cols-5 m-2'> 
           
