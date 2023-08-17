@@ -19,13 +19,14 @@ const page = ({params}: ParamsDetailsProps) => {
       const result = await response.json() 
 
       setLoading(<></>)
+      //setting the result received from url to be the data in state
       setData(result) 
     }
-    console.log(data) 
+   // console.log(data) 
 
     useEffect(() => {
       getData() 
-    },[])
+    },[data])
 
   return (
     <div className="flex justify-center m-6">
