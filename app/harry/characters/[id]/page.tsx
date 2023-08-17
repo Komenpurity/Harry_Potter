@@ -10,13 +10,15 @@ interface ParamsDetailsProps{
 const page = ({params}: ParamsDetailsProps) => {
     const {id} = params
     //console.log(params) 
-    const [data,setData] = useState([]) 
+    const [data,setData] = useState([])
+    const [loading,setLoading]=useState(<p className='text-center text-3xl font-semibold'>Wait a minute,fetching...</p>)
 
     async function getData(){ 
       //calling the url with the id info 
       const response = await fetch(`https://hp-api.onrender.com/api/character/${id}`)
       const result = await response.json() 
 
+      setLoading(<></>)
       setData(result) 
     }
     console.log(data) 
@@ -27,6 +29,7 @@ const page = ({params}: ParamsDetailsProps) => {
 
   return (
     <div className="flex justify-center m-6">
+      {loading}
      {data?.map((element: detailsProps) => {
         return (
           <div key={element.id} className="max-w-sm m-3 rounded overflow-hidden shadow-lg"> 
