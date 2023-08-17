@@ -2,7 +2,7 @@
 
 import { CharacterProps } from "@/types";
 import { useState } from "react";
-import Detail from "./Detail";
+import Detail from "./detail";
 
 interface CharacterCardProps {
   char: CharacterProps; 

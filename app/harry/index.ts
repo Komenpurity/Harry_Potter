@@ -1,8 +1,8 @@
-import CharacterCard from "./CharacterCard";
-import Detail from "./Detail";
-import SearchBar from "./SearchBar";
-import SearchDisplay from "./SearchDisplay";
-import Navbar from "./Navbar";
+import CharacterCard from "./character-card";
+import Detail from "./detail";
+import SearchBar from "./search-bar";
+import SearchDisplay from "./search-display";
+import Navbar from "./navbar";
 
 export{
     SearchBar,
