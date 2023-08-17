@@ -9,7 +9,11 @@ export interface detailsProps{
     role: string;
     house: string;
     wand: string;
-    id: any
+    id: any;
+    image: string;
+    actor: string;
+    wizard: string;
+    ancestry: string;
 }
 
 export interface HomeProps {
@@ -18,4 +22,8 @@ export interface HomeProps {
 
 export interface FilterProps {
     house:string; 
+}
+
+export interface ParamsProps{
+    id: any
 }
