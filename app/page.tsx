@@ -1,7 +1,7 @@
-
-import { CharacterCard, SearchBar, SearchDisplay } from '@/components'
 import { CharacterProps, HomeProps } from '@/types';
 import { fetchCharacters, fetchHouses } from '@/utils'
+import Link from 'next/link'
+import { CharacterCard, SearchBar, SearchDisplay } from './harry';
 
 export default async function Home({searchParams}: HomeProps) {  
       const allCharacters = await fetchCharacters() 
@@ -18,7 +18,7 @@ export default async function Home({searchParams}: HomeProps) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-12 ">
      
-     <h1 className='text-3xl font-extrabold'>Harry Potter Characters</h1>
+     <h1 className='text-3xl font-extrabold'>Harry <Link href="/details">Potter</Link> Characters</h1>
      <SearchBar />
 
           <div className='grid grid-cols-5 m-2'> 

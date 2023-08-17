@@ -1,9 +1,8 @@
 'use client'
 
 import { CharacterProps } from "@/types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Detail from "./Detail";
-import { useRouter } from 'next/navigation';
 
 interface CharacterCardProps {
   char: CharacterProps; 
@@ -13,8 +12,6 @@ const CharacterCard = ({char}: CharacterCardProps) => {
   const {name,dateOfBirth,id} = char;
   const [data,setData] = useState([]) 
 
-  const { push } = useRouter();
-
     async function handleClick(newItem: any){ 
 
       //calling the url with the id info 
@@ -23,8 +20,6 @@ const CharacterCard = ({char}: CharacterCardProps) => {
         const result = await response.json()  
         setData(result)
 
-        
-        // push('/details'); 
     }
 
     //iterating over the data details from the API when clicked
