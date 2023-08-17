@@ -5,6 +5,18 @@
 ## Description
 A NextJs application that displays harry potter characters with their details.
 
+## Setup and Installation
+
+* Clone the repository to your local machine.
+
+git clone git@github.com:Komenpurity/Harry_Potter.git
+
+* Run the application using
+
+npm run dev 
+
+
+
 ## Deliverables
 
 * Display a list of Harry Potter characters in the card element on the
