@@ -23,7 +23,7 @@ export default async function Home({searchParams}: HomeProps) {
           <div className='grid grid-cols-5 m-2 md:grid lg:grid-cols-4 gap-[30px] max-md:grid-cols-2 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center'> 
             {searchHouses?.map((element: CharacterProps) => {
               //iterating over the search results from the API
-              return <SearchDisplay element={element} />
+              return <SearchDisplay element={element} key={element.id}/> 
             })}
           </div>
         
@@ -34,7 +34,7 @@ export default async function Home({searchParams}: HomeProps) {
           <div className='grid grid-cols-5 m-2 md:grid lg:grid-cols-4 gap-[30px] max-md:grid-cols-2 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center'>   
             {allCharacters?.map((char) => {
               //assigning the data to the char 
-              return <CharacterCard char={char}/>  
+              return <CharacterCard char={char} key={char.id}/>  
             })}
           </div>
         </div>

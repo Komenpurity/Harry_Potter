@@ -2,6 +2,7 @@
 
 import { ParamsProps, detailsProps } from "@/types"
 import { useEffect,useState } from "react";
+import Image from 'next/image'
 
 interface ParamsDetailsProps{
     params: ParamsProps
@@ -35,10 +36,10 @@ const page = ({params}: ParamsDetailsProps) => {
         return (
           <div key={element.id} className="max-w-sm m-3 rounded overflow-hidden shadow-lg"> 
             <div  className="px-6 py-4">
-            <img src={element.image} className='w-[340px] h-[340px] max-md:w-[80vw] rounded-lg'
+            <Image src={element.image} alt={element.name} className='w-[340px] h-[340px] max-md:w-[80vw] rounded-lg'
           />
             <div className="font-bold text-xl mb-2">Name: <span>{element.name}</span>  </div>
-              <p className="text-gray-700 text-base">Actor's Name: <span>{element.actor}</span> </p>
+              <p className="text-gray-700 text-base">Actor Name: <span>{element.actor}</span> </p>
               <p className="text-gray-700 text-base">House: <span>{element.house}</span> </p>
               <p className="text-gray-700 text-base">Wizard: <span>{element.wizard}</span> </p>
               <p className="text-gray-700 text-base">Ancestry: <span>{element.ancestry}</span> </p>
