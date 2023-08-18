@@ -1,6 +1,7 @@
 import { FilterProps } from "@/types";
 
 export async function fetchCharacters() {
+    try{
     //fetch the data from the api
     const response = await fetch("https://hp-api.onrender.com/api/characters")
 
@@ -8,11 +9,15 @@ export async function fetchCharacters() {
     const result = await response.json();
 
     return result;
+    } catch (error:any){
+        console.log(error.message)
+      }
 }
 
 export async function fetchHouses(filters: FilterProps){
     const { house } = filters; 
 
+    try{
     //fetch the data from the api
     const response = await fetch(`https://hp-api.onrender.com/api/characters/house/${house}`)
 
@@ -20,4 +25,8 @@ export async function fetchHouses(filters: FilterProps){
     const result = await response.json();
 
     return result;
+
+    }catch (error:any){
+        console.log(error.message)  
+      }
 }
